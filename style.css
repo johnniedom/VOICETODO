@@ -26,7 +26,7 @@ header {
 }
 .ol {
   display: flex;
-  gap: 32px;
+  gap: 28px;
   flex: 1;
 }
 .ol:last-of-type {
@@ -37,7 +37,7 @@ header {
   /* font-weight: 600; */
   font-family: "Monoton", cursive;
   font-size: 38px;
-  margin-left: 20px;
+  margin-right: 28px;
 }
 
 .main {
@@ -64,7 +64,7 @@ header {
   justify-content: center;
 }
 .voice {
-  font-size: 4rem;
+  font-size: 4.2rem;
   /* font-family: 'Nova Mono', monospace; */
 }
 .wrapper-logo img {
@@ -78,10 +78,11 @@ header {
   gap: 32px;
 }
 .mic {
-  background-color: red;
+  /* background-color: red; */
 }
 .fa {
-  font-size: 30px;
+  cursor: pointer;
+  font-size: 48px;
 }
 .input {
   padding: 10px;
@@ -97,6 +98,10 @@ input:focus {
 .input:hover,
 .input:active {
   box-shadow: 12px 12px 24px #676767, -12px -12px 24px #ffffff;
+}
+
+.btn_add{
+  cursor: pointer;
 }
 
 /* SECTION-2 */
@@ -151,11 +156,20 @@ input:focus {
   max-width: 250px;
   min-width: 250px;
   padding: 16px;
+  /* container  of an absolute positioned element */
+  position: relative;
+  overflow: hidden;
 }
 
 .remove-items {
   border: none;
+  position: absolute;
+  right: 2px;
+  top:0;
+  color: red;
 }
 
-.remove-items:hover {
+.remove-items:hover,
+.remove-items:active {
+  transform: scale(1.3);
 }
