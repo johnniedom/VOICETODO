@@ -22,7 +22,7 @@ AddBtn.addEventListener("click", () => {
   animate(Todo, 400, 50);
 });
 
-console.log(Todo.classList);
+// console.log(Todo.classList);
 
 
-Mic.addEventListener("click", speakTimer)
+Mic.addEventListener("click", speakTimer.bind(Mic, inputTodo, AddBtn))
