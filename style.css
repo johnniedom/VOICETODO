@@ -99,9 +99,12 @@ input:focus {
 .input:active {
   box-shadow: 12px 12px 24px #676767, -12px -12px 24px #ffffff;
 }
-
-.btn_add{
+.btn{
   cursor: pointer;
+  font-size: 1.3rem;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
 }
 
 /* SECTION-2 */
@@ -109,6 +112,7 @@ input:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
+
 }
 
 /* FILTER TODO */
@@ -130,6 +134,7 @@ input:focus {
 }
 
 /*  TODO-LISTS */
+
 .todo-lists {
   width: 100%;
   height: 100%;
@@ -156,9 +161,14 @@ input:focus {
   max-width: 250px;
   min-width: 250px;
   padding: 16px;
+  padding-top: 22px ;
   /* container  of an absolute positioned element */
   position: relative;
   overflow: hidden;
+}
+
+.todo-items:hover .date{
+  display: block;
 }
 
 .remove-items {
@@ -167,9 +177,38 @@ input:focus {
   right: 2px;
   top:0;
   color: red;
+
 }
 
 .remove-items:hover,
 .remove-items:active {
   transform: scale(1.3);
 }
+.date{
+  font-size: 0.8rem;
+  position: absolute;
+  top:0;
+  left:4px;
+  background-color: #676767;
+  padding: 4px 4px;
+  color: white;
+  display: none;
+}
+
+
+/* Clear Btn */
+.clear-wrapper{
+  width: 100%;
+  height: 100%;
+  margin: 30px 0 0;
+  display: flex;
+  max-width: 400px;
+
+}
+
+.clear-todo{
+  margin: 0 auto;
+  width: 100%;
+  background-color: white;
+}
+

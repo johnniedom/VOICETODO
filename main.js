@@ -2,6 +2,7 @@
 import { animate } from "./writeAnimate";
 import { addItem } from "./addTodo";
 import { speakTimer } from "./speak";
+import { cDay } from "./date";
 
 import "./style.css";
 const Todo = document.querySelector(".voice");
@@ -22,7 +23,8 @@ AddBtn.addEventListener("click", () => {
   animate(Todo, 400, 50);
 });
 
-// console.log(Todo.classList);
-
-
+// console.log(Math.round(Math.abs((2023102002 - new Date) / (1000 * 60 * 60 * 24))));
+// 
 Mic.addEventListener("click", speakTimer.bind(Mic, inputTodo, AddBtn))
+
+// cDay()

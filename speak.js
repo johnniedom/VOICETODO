@@ -1,5 +1,6 @@
 export function speakTimer(addWord, stopSpeak) {
   // console.log(this);
+  addWord.focus
   this.classList.toggle("fa-beat-fade");
   const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
 
@@ -11,12 +12,15 @@ export function speakTimer(addWord, stopSpeak) {
 
   speakRec.onresult = (e) => {
     const curIndex = e.results.length;
-    for (let i = e.resultIndex; i < curIndex; i++) {
-      let script = e.results[i][0].transcript;
-      console.log( script.slice(-1))
 
-      // if (script)
-      word += e.results[i][0].transcript;
+    for (let i = e.resultIndex; i < curIndex; i++) {
+      
+      let script = e.results[i][0].transcript;
+      console.log("script", script.slice(-1))
+
+      if (script.slice(-1) === ".") script = script.replace(".", " ");
+
+       word += script
     }
 
     addWord.value = `${word}`;
