@@ -1,12 +1,6 @@
 import { cDay } from "./date";
 export function addItem(input, Parent){
-    // if (input.value === "" ){
-    //     console.log(input.value);
-    //     alert('Please Add a Todo 😊')
-    // }
-    console.log(typeof input.value);
-
-    
+  
    return function (){
     
     const Todo = document.createElement(`li`)
@@ -19,21 +13,25 @@ export function addItem(input, Parent){
      closeIcon.className = " fa-solid fa-xmark"
      TodoTime.className = "date"
 
-     Todo.innerText = `${input.value}`;
+     if (typeof input === `string`){
+        Todo.innerText = `${input}`
+     }else{
+        Todo.innerText = `${input.value}`
+        input.value = ""
+     }
      TodoTime.innerText = `${cDay()}`;
 
      deleteBtn.appendChild(closeIcon)
      console.log(deleteBtn);
-     Todo.appendChild(deleteBtn);
      Todo.appendChild(TodoTime);
+     Todo.appendChild(deleteBtn);
  
-    //  console.log(Todo, Todo.textContent);
-    // console.log(Todo.designMode);
+     
 
      Parent.appendChild(Todo)
 
 
-    input.value = ""
+    
    } 
 }
 

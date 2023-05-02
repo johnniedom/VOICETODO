@@ -2,29 +2,59 @@
 import { animate } from "./writeAnimate";
 import { addItem } from "./addTodo";
 import { speakTimer } from "./speak";
-import { cDay } from "./date";
 
 import "./style.css";
-const Todo = document.querySelector(".voice");
+const wordT = document.querySelector(".voice");
 const AddBtn = document.querySelector(".btn ");
 const inputTodo = document.getElementById("input");
-const ListTodo = document.querySelector(".todo_wrapper");
+const wrapperTodo = document.querySelector(".todo_wrapper");
 const Mic = document.querySelector(".fa");
+const TodoS = document.querySelectorAll(".todo-items");
+
+window.addEventListener("load", () => {
+  console.log(localStorage);
+});
+
+(()=>{
+  const todoItemsArray = getItemsFromStorage();
+  todoItemsArray.forEach(todoItem=>{
+    addItem(todoItem, wrapperTodo)()
+  })
+  
+})()
 
 
 AddBtn.addEventListener("click", () => {
-  if (inputTodo.value === "" ){
-    alert('Please Add a Todo 😊')
-}
+  if (inputTodo.value === "") {
+    alert("Please Add a Todo 😊");
+  }
 
   if (inputTodo.value !== "") {
-    addItem(inputTodo, ListTodo)();
+    const word = `${inputTodo.value}`
+    addItem(inputTodo, wrapperTodo)();
+    addToStorage(word);
   }
-  animate(Todo, 400, 50);
+
+  animate(wordT, 400, 50);
 });
 
-// console.log(Math.round(Math.abs((2023102002 - new Date) / (1000 * 60 * 60 * 24))));
-// 
-Mic.addEventListener("click", speakTimer.bind(Mic, inputTodo, AddBtn))
+Mic.addEventListener("click", speakTimer.bind(Mic, inputTodo, AddBtn));
 
-// cDay()
+export function addToStorage(item) {
+  
+
+  const itemsArray = getItemsFromStorage();
+  console.log(itemsArray);
+
+  itemsArray.push(item);
+
+  localStorage.setItem("todoItems", JSON.stringify(itemsArray));
+
+  // console.log(itemsArray, localStorage.todoItems);
+}
+
+function getItemsFromStorage() {
+  let itemArray;
+  if (localStorage.getItem("todoItems") === null) return (itemArray = []);
+  return (itemArray = JSON.parse(localStorage.getItem("todoItems")));
+}
