@@ -22,16 +22,12 @@ export function addItem(input, Parent){
      TodoTime.innerText = `${cDay()}`;
 
      deleteBtn.appendChild(closeIcon)
-     console.log(deleteBtn);
+   //   console.log(deleteBtn);
      Todo.appendChild(TodoTime);
      Todo.appendChild(deleteBtn);
- 
-     
 
      Parent.appendChild(Todo)
 
-
-    
    } 
 }
 
