@@ -2,6 +2,7 @@
 import { animate } from "./writeAnimate";
 import { addItem } from "./addTodo";
 import { speakTimer } from "./speak";
+import { cDay } from "./date";
 
 import "./style.css";
 const wordT = document.querySelector(".voice");
@@ -11,11 +12,11 @@ const wrapperTodo = document.querySelector(".todo_wrapper");
 const filterTodo = document.querySelector(".todo-filter");
 const Mic = document.querySelector(".fa");
 const clearTodo = document.querySelector(".clear-todo");
+const curDate = document.querySelector(".cur-date");
 
 export function addToStorage(item) {
   const itemsArray = getItemsFromStorage();
-
-
+  console.log(item);
   itemsArray.push(item);
 
   localStorage.setItem("todoItems", JSON.stringify(itemsArray));
@@ -27,36 +28,38 @@ function getItemsFromStorage() {
   return (itemArray = JSON.parse(localStorage.getItem("todoItems")));
 }
 
- function checkUI (){
-  const itemArray = getItemsFromStorage()
+function checkUI() {
+  const itemArray = getItemsFromStorage();
   console.log("love");
-  if(itemArray.length === 0){
-    filterTodo.style.display = "none"
-    clearTodo.style.display = "none"
-  }else{
-    filterTodo.style.display = "block"
-    clearTodo.style.display = "block"
+  if (itemArray.length === 0) {
+    filterTodo.style.display = "none";
+    clearTodo.style.display = "none";
+  } else {
+    filterTodo.style.display = "block";
+    clearTodo.style.display = "block";
   }
-
- }
- 
-const init  = () => {
-  // console.log(localStorage);
-  const todoItemsArray = getItemsFromStorage();
-  if(todoItemsArray.length !== 0){
-  todoItemsArray.forEach((todoItem) => {
-    addItem(todoItem, wrapperTodo)();
-  });
 }
+
+const init = () => {
+  // console.log(localStorage);
+  curDate.innerText = `${cDay()}`
+  filterTodo.value = "";
+  inputTodo.value = "";
+
+  const todoItemsArray = getItemsFromStorage();
+  if (todoItemsArray.length !== 0) {
+    todoItemsArray.forEach((todoItem) => {
+      console.log(todoItem);
+      addItem(todoItem, wrapperTodo)();
+    });
+  }
   checkUI();
 
-  console.log(todoItemsArray.length);
-  
-}
+  console.log(todoItemsArray);
+};
 
 window.addEventListener("load", init);
-
-// The speaking Mic 
+// The speaking Mic
 Mic.addEventListener("click", speakTimer.bind(Mic, inputTodo, AddBtn));
 
 AddBtn.addEventListener("click", () => {
@@ -65,25 +68,37 @@ AddBtn.addEventListener("click", () => {
   }
 
   if (inputTodo.value !== "") {
+    let Date = cDay();
+    let todoInput = inputTodo.value;
+    const todoData = {todoInput, Date}
+    console.log(todoData);
+
     const word = `${inputTodo.value}`;
-    addItem(inputTodo, wrapperTodo)();
-    addToStorage(word);
+    addItem(todoData, wrapperTodo)();
+    addToStorage(todoData);
   }
 
   animate(wordT, 400, 50);
-  checkUI ();
+  inputTodo.value = "";
+  checkUI();
 });
-
 
 clearTodo.addEventListener("click", () => {
   const todos = document.querySelectorAll(".todo-items");
-  console.log(wrapperTodo, todos , todos.length,wrapperTodo.firstChild );
-  todos.forEach(todo =>{
-    wrapperTodo.removeChild(todo)
-  })
-  
+  // console.log(wrapperTodo, todos, todos.length, wrapperTodo.firstChild);
+  todos.forEach((todo) => {
+    wrapperTodo.removeChild(todo);
+  });
+
   animate(wordT, 400, 50);
   localStorage.removeItem("todoItems");
 
   checkUI();
 });
+
+filterTodo.oninput = (e) => {
+let ab = "";
+const datas = getItemsFromStorage();
+  if (e.inputType === "insertText") ab += e.data;
+   
+};

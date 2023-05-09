@@ -12,44 +12,42 @@
     ></script>
     <title>Todo-voice</title>
   </head>
-
-  <!-- <header>
-    <ul class="ol"></ul>
-
-    <div class="todo">V-TODO</div>
-
-    <ul class="ol">
-      <li class="link git"> <a href="test.html">Github</a> </li>
-      <li class="link tweet">Twitter</li>
-    </ul>
-
-    
-  </header> -->
+  <header>
+    <div class="intro-wrapper">
+     <div class="greeting-wrapper">
+      <span class="greeting">Good, Evening</span>
+      <div class="user-name__wrapper">
+        <input
+        id="filter"
+          class="user-name"
+          type="text"
+          name="item"
+          placeholder="Your Name here"
+        />
+     </div>
+      </div>
+      <span class="cur-date"></span>
+    </div>
+    <div class="wave-wrapper">
+      <div class="wave-container">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1440 320"
+          class="wave"
+        >
+          <path
+            fill="#fff"
+            fill-opacity="1"
+            d="M0,192L48,170.7C96,149,192,107,288,128C384,149,480,235,576,261.3C672,288,768,256,864,213.3C960,171,1056,117,1152,128C1248,139,1344,213,1392,250.7L1440,288L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+          ></path>
+        </svg>
+      </div>
+    </div>
+  </header>
 
   <body>
     <main class="main">
       <section class="sec sec-1 add-todo">
-        <div class="wave-wrapper">
-          <div class="head">
-            <div>
-              <h1>Head</h1>
-            </div>
-          </div>
-          <div class="wave-container">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 1440 320"
-              class="wave"
-            >
-              <path
-                fill="#fff"
-                fill-opacity="1"
-                d="M0,192L48,170.7C96,149,192,107,288,128C384,149,480,235,576,261.3C672,288,768,256,864,213.3C960,171,1056,117,1152,128C1248,139,1344,213,1392,250.7L1440,288L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
-              ></path>
-            </svg>
-          </div>
-        </div>
-
         <div class="wrapper-logo">
           <!-- <img src="public/img/note.png" alt="" /> -->
           <h1 class="voice">Voice-Todo</h1>
@@ -133,7 +131,5 @@
     </main>
   </body>
 
-  <style>
-
-  </style>
+  <style></style>
 </html>
