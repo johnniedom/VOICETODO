@@ -98,7 +98,6 @@ header {
 }
 .greeting-wrapper{
   gap: 0;
-  /* margin:0 auto; */
 }
 
 .greeting{
@@ -107,7 +106,6 @@ header {
 .user-name__wrapper{
   flex: 1;
 }
-
 }
 @media only screen and  (max-width: 400px) {
 
