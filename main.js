@@ -3,6 +3,7 @@ import { animate } from "./writeAnimate";
 import { addItem } from "./addTodo";
 import { speakTimer } from "./speak";
 import { cDay } from "./date";
+import { toDay } from "./date";
 
 import "./style.css";
 const wordT = document.querySelector(".voice");
@@ -42,7 +43,7 @@ function checkUI() {
 
 const init = () => {
   // console.log(localStorage);
-  curDate.innerText = `${cDay()}`
+  curDate.innerText = `${toDay()}`
   filterTodo.value = "";
   inputTodo.value = "";
 

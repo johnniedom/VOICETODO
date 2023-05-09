@@ -10,3 +10,16 @@ export function cDay (){
     
 }
 
+export function toDay (){
+    const day = new Intl.DateTimeFormat("en-Us", {
+        day: "numeric",
+        year: `numeric`,
+        month: `long`,
+        weekday : `long`,
+      }).format(new Date)
+      
+      console.log(day);
+      return day
+    
+}
+

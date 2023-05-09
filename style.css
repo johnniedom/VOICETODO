@@ -38,25 +38,6 @@ header {
   gap: 16px;
 }
 
-/* user_info  SECTION */
-.greeting {
-  /* flex: 1; */
-}
-.user-name__wrapper {
-  width: 250px;
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-  /* flex: 1; */
-}
-.user-name {
-  width: 100%;
-  font-size: 2rem;
-  border-radius: 0;
-  border: none;
-  background-color: inherit;
-}
-
 /* wave */
 .wave-wrapper {
   padding: 0;
@@ -70,74 +51,33 @@ header {
 /* SECTION-1 */
 .sec-1 {
   width: 100%;
-  height: 55%;
-  /* background-color: white; */
+  height: 40%;
   margin: 0 0 15px;
   justify-content: center;
   display: flex;
   flex-direction: column;
   gap: 30px;
   position: relative;
-  margin-bottom: -50px;
+  margin-bottom: 30px;
+
 }
 .wrapper-logo {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* margin-top: 100px; */
   justify-content: center;
 }
 .voice {
   font-size: 4.2rem;
 }
 
-
-@media only screen and (max-width: 850px) {
-  .user-name {
-    font-size: 2rem;
-  }
-  .greeting-wrapper {
-    gap: 0;
-  }
-
-  .greeting {
-    flex: 1;
-  }
-  .user-name__wrapper {
-    flex: 1;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  .greeting {
-    flex: 1.2;
-  }
-  .user-name__wrapper {
-    flex: 1;
-  }
-}
-@media only screen and (max-width: 500px) {
-  .voice {
-    font-size: 3.5rem;
-  }
-
-  .fa {
-    font-size: 20px;
-  }
-
-  .input {
-    padding: 5px;
-    font-size: 1.4rem;
-    width: 100%;
-  }
-}
 .wrapper-form {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
   flex-wrap: wrap;
-  max-width: 250px;
+  max-width: 350px;
   min-width: 150px;
   margin: 0 auto;
 }
@@ -198,12 +138,7 @@ input:focus {
   margin-left: 36px;
 }
 
-.todo-filter:hover {
-  /* transform: scale((4)); */
-}
-
 /*  TODO-LISTS */
-
 .todo-lists {
   width: 100%;
   height: 100%;
@@ -322,4 +257,25 @@ footer {
 .img-wrapper img {
   width: 100%;
   height: 100%;
+} 
+
+@media only screen and (max-width: 500px) {
+  .voice {
+    font-size: 3.5rem;
+  }
+
+  .fa {
+    font-size: 28px;
+  }
+
+  .input {
+    padding: 5px;
+    font-size: 1.4rem;
+    width: 100%;
+  }
+
+  .sec-1 {
+    margin-top: 40px;
+  
+  }
 }
