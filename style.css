@@ -31,7 +31,7 @@ header {
   gap: 16px;
   flex-direction: column-reverse;
 }
-.greeting-wrapper{
+.greeting-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,10 +39,10 @@ header {
 }
 
 /* user_info  SECTION */
-.greeting{
+.greeting {
   /* flex: 1; */
 }
-.user-name__wrapper{
+.user-name__wrapper {
   width: 250px;
   display: inline-block;
   margin: 0;
@@ -50,14 +50,12 @@ header {
   /* flex: 1; */
 }
 .user-name {
-  width:100%;
+  width: 100%;
   font-size: 2rem;
   border-radius: 0;
   border: none;
   background-color: inherit;
-
 }
-
 
 /* wave */
 .wave-wrapper {
@@ -92,33 +90,33 @@ header {
 .voice {
   font-size: 4.2rem;
 }
-@media only screen and  (max-width: 850px) {
+
+
+@media only screen and (max-width: 850px) {
   .user-name {
     font-size: 2rem;
-}
-.greeting-wrapper{
-  gap: 0;
+  }
+  .greeting-wrapper {
+    gap: 0;
+  }
+
+  .greeting {
+    flex: 1;
+  }
+  .user-name__wrapper {
+    flex: 1;
+  }
 }
 
-.greeting{
-  flex: 1;
+@media only screen and (max-width: 400px) {
+  .greeting {
+    flex: 1.2;
+  }
+  .user-name__wrapper {
+    flex: 1;
+  }
 }
-.user-name__wrapper{
-  flex: 1;
-}
-}
-@media only screen and  (max-width: 400px) {
-
-
-.greeting{
-  flex: 1.2;
-}
-.user-name__wrapper{
-  flex: 1;
-}
-
-}
-@media only screen and  (max-width: 500px) {
+@media only screen and (max-width: 500px) {
   .voice {
     font-size: 3.5rem;
   }
@@ -126,15 +124,15 @@ header {
   .fa {
     font-size: 20px;
   }
-  
+
   .input {
     padding: 5px;
     font-size: 1.4rem;
     width: 100%;
   }
-
 }
 .wrapper-form {
+  
   display: flex;
   align-items: center;
   justify-content: center;
