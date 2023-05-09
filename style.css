@@ -92,15 +92,25 @@ header {
 .voice {
   font-size: 4.2rem;
 }
-@media only screen and  (max-width: 450px) {
+@media only screen and  (max-width: 850px) {
   .user-name {
     font-size: 2rem;
 }
 .greeting-wrapper{
   gap: 0;
   /* margin:0 auto; */
+}
+
+.greeting{
+  flex: 1;
+}
+.user-name__wrapper{
+  flex: 1;
+}
 
 }
+@media only screen and  (max-width: 400px) {
+
 
 .greeting{
   flex: 1.2;
@@ -115,19 +125,14 @@ header {
     font-size: 3.5rem;
   }
 
-  .input-tool {
-    gap:8px;
-    align-items: baseline;
-    padding: 300px;
-    /* background-color: red; */
-  }
   .fa {
     font-size: 20px;
   }
   
   .input {
     padding: 5px;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    width: 100%;
   }
 
 }
@@ -137,7 +142,7 @@ header {
   justify-content: center;
   gap: 8px;
   flex-wrap: wrap;
-  max-width: 200px;
+  max-width: 250px;
   min-width: 150px;
   margin: 0 auto;
 }
