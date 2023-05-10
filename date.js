@@ -5,7 +5,7 @@ export function cDay (){
         month: `long`,
       }).format(new Date)
       
-      console.log(day);
+      // console.log(day);
       return day
     
 }
@@ -18,7 +18,7 @@ export function toDay (){
         weekday : `long`,
       }).format(new Date)
       
-      console.log(day);
+      // console.log(day);
       return day
     
 }

@@ -1,7 +1,7 @@
 export function addItem(input, Parent) {
-  console.log(input);
+  // console.log(input);
   const { todoInput, Date } = input;
-  console.log(todoInput, Date);
+  // console.log(todoInput, Date);
 
   return function () {
     const Todo = document.createElement(`li`);

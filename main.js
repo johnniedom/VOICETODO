@@ -50,7 +50,7 @@ const init = () => {
   const todoItemsArray = getItemsFromStorage();
   if (todoItemsArray.length !== 0) {
     todoItemsArray.forEach((todoItem) => {
-      console.log(todoItem);
+      // console.log(todoItem);
       addItem(todoItem, wrapperTodo)();
     });
   }
@@ -58,6 +58,7 @@ const init = () => {
 
   console.log(todoItemsArray);
 };
+
 
 window.addEventListener("load", init);
 // The speaking Mic
@@ -97,9 +98,12 @@ clearTodo.addEventListener("click", () => {
   checkUI();
 });
 
-filterTodo.oninput = (e) => {
-let ab = "";
-const datas = getItemsFromStorage();
-  if (e.inputType === "insertText") ab += e.data;
-   
-};
+filterTodo.oninput = (e) =>{
+  const todoList = document.querySelectorAll(".todo-items");
+  const filterInput =e.target.value.toLowerCase();
+ todoList.forEach(todo =>{
+  console.log(filterInput, todo.textContent);
+  // if (filterInput)
+ })
+}
+console.log(filterTodo);
