@@ -38,12 +38,23 @@ function checkUI() {
   } else {
     filterTodo.style.display = "block";
     clearTodo.style.display = "block";
+
+    const rmItems = document.querySelectorAll(".remove-items");
+    console.log(rmItems);
+
+    rmItems.forEach((rmItem) => {
+      rmItem.addEventListener("click", (e) => {
+        // console.log(e, e.target.parentNode.parentNode);
+        const item = e.target.parentNode.parentNode;
+        wrapperTodo.removeChild(item);
+      });
+    });
   }
 }
 
 const init = () => {
   // console.log(localStorage);
-  curDate.innerText = `${toDay()}`
+  curDate.innerText = `${toDay()}`;
   filterTodo.value = "";
   inputTodo.value = "";
 
@@ -59,7 +70,6 @@ const init = () => {
   console.log(todoItemsArray);
 };
 
-
 window.addEventListener("load", init);
 // The speaking Mic
 Mic.addEventListener("click", speakTimer.bind(Mic, inputTodo, AddBtn));
@@ -72,7 +82,7 @@ AddBtn.addEventListener("click", () => {
   if (inputTodo.value !== "") {
     let Date = cDay();
     let todoInput = inputTodo.value;
-    const todoData = {todoInput, Date}
+    const todoData = { todoInput, Date };
     console.log(todoData);
 
     const word = `${inputTodo.value}`;
@@ -87,7 +97,6 @@ AddBtn.addEventListener("click", () => {
 
 clearTodo.addEventListener("click", () => {
   const todos = document.querySelectorAll(".todo-items");
-  // console.log(wrapperTodo, todos, todos.length, wrapperTodo.firstChild);
   todos.forEach((todo) => {
     wrapperTodo.removeChild(todo);
   });
@@ -98,12 +107,15 @@ clearTodo.addEventListener("click", () => {
   checkUI();
 });
 
-filterTodo.oninput = (e) =>{
+filterTodo.oninput = (e) => {
   const todoList = document.querySelectorAll(".todo-items");
-  const filterInput =e.target.value.toLowerCase();
- todoList.forEach(todo =>{
-  console.log(filterInput, todo.textContent);
-  // if (filterInput)
- })
-}
-console.log(filterTodo);
+  const filterInput = e.target.value.toLowerCase();
+  todoList.forEach((todo) => {
+    if (todo.textContent.toLowerCase().includes(filterInput)) {
+      todo.style.display = "flex";
+      console.log("okay", todo);
+    } else {
+      todo.style.display = "none";
+    }
+  });
+};
